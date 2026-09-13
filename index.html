@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FBFAF8;color:#1A1A17;font-family:'Instrument Sans',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#1A1A17;text-decoration:none}
+a:hover{color:oklch(0.52 0.13 250)}
+</style>
+</helmet>
+<div style="max-width:1180px;margin:0 auto;border-left:{{ vRule }};border-right:{{ vRule }}">
+
+<header style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding:22px clamp(20px,5vw,56px);border-bottom:1px solid rgba(0,0,0,0.08)">
+  <a href="#top" style="font-size:15px;font-weight:600;letter-spacing:-0.01em">Alexey Tretina</a>
+  <nav style="display:flex;align-items:center;gap:clamp(14px,3vw,28px);font-size:14px;color:#6B6A63">
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <a href="#about" style="color:#6B6A63" style-hover="color:#1A1A17">About</a>
+      <a href="#work" style="color:#6B6A63" style-hover="color:#1A1A17">Case studies</a>
+      <a href="#career" style="color:#6B6A63" style-hover="color:#1A1A17">Career</a>
+    </sc-if>
+    <a href="#contact" style="display:inline-flex;align-items:center;height:34px;padding:0 14px;border-radius:999px;background:#1A1A17;color:#FBFAF8;font-weight:500;white-space:nowrap" style-hover="background:oklch(0.52 0.13 250);color:#fff">Get in touch</a>
+    <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+      <button type="button" onClick="{{ toggleMenu }}" aria-label="Menu" aria-expanded="{{ menuOpen }}" style="display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0 10px;margin-right:-10px;border:0;background:none;cursor:pointer">
+        <span style="display:block;height:1.5px;background:#1A1A17;border-radius:2px"></span>
+        <span style="display:block;height:1.5px;background:#1A1A17;border-radius:2px"></span>
+        <span style="display:block;height:1.5px;background:#1A1A17;border-radius:2px"></span>
+      </button>
+    </sc-if>
+  </nav>
+</header>
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <nav style="display:flex;flex-direction:column;padding:6px clamp(20px,5vw,56px) 14px;border-bottom:1px solid rgba(0,0,0,0.08);font-size:16px">
+    <a href="#about" onClick="{{ closeMenu }}" style="padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.06)">About</a>
+    <a href="#work" onClick="{{ closeMenu }}" style="padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.06)">Case studies</a>
+    <a href="#career" onClick="{{ closeMenu }}" style="padding:12px 0">Career</a>
+  </nav>
+</sc-if>
+
+<section id="about" style="padding:clamp(48px,9vw,104px) clamp(20px,5vw,56px) clamp(40px,7vw,72px)">
+  <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,64px);align-items:flex-start">
+    <div style="flex:1 1 420px;min-width:0">
+      <p style="margin:0 0 clamp(20px,3vw,28px);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:oklch(0.52 0.13 250)">About</p>
+      <h1 style="margin:0;font-size:clamp(34px,6.4vw,62px);line-height:1.04;letter-spacing:-0.03em;font-weight:500;text-wrap:pretty;max-width:16em">Sr. UX Designer with over a decade of shipping products people rely on.</h1>
+      <p style="margin:clamp(20px,3vw,30px) 0 0;font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:#4A493F;max-width:34em;text-wrap:pretty">Based in Vienna, I'm Alexey, a UX designer with over a decade in the industry. I've helped dozen of startups to launch MVPs, secure investments, and enhance their digital products. Outside of work, I enjoy filming videos, hiking, traveling, and playing football.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(24px,3vw,32px)">
+        <a href="https://www.linkedin.com/in/alexeytretina/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;border:1px solid rgba(0,0,0,0.12);border-radius:999px;font-size:13.5px;color:#4A493F;transition:background .15s,color .15s,border-color .15s" style-hover="background:#0A66C2;border-color:#0A66C2;color:#fff">LinkedIn</a>
+        <a href="https://www.youtube.com/@alexeytretina" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;border:1px solid rgba(0,0,0,0.12);border-radius:999px;font-size:13.5px;color:#4A493F;transition:background .15s,color .15s,border-color .15s" style-hover="background:#FF0000;border-color:#FF0000;color:#fff">YouTube</a>
+        <a href="https://dribbble.com/tretina" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;border:1px solid rgba(0,0,0,0.12);border-radius:999px;font-size:13.5px;color:#4A493F;transition:background .15s,color .15s,border-color .15s" style-hover="background:#EA4C89;border-color:#EA4C89;color:#fff">Dribbble</a>
+        <a href="https://medium.com/@tretina" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;border:1px solid rgba(0,0,0,0.12);border-radius:999px;font-size:13.5px;color:#4A493F;transition:background .15s,color .15s,border-color .15s" style-hover="background:#000;border-color:#000;color:#fff">Medium</a>
+        <a href="https://twitter.com/alexeytretina" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;border:1px solid rgba(0,0,0,0.12);border-radius:999px;font-size:13.5px;color:#4A493F;transition:background .15s,color .15s,border-color .15s" style-hover="background:#000;border-color:#000;color:#fff">X</a>
+      </div>
+    </div>
+    <div style="flex:0 1 300px;min-width:200px;max-width:340px;align-self:stretch;display:flex;align-items:flex-start;justify-content:flex-end">
+      <img src="https://cdn.prod.website-files.com/608f98c4efca26cabe8ac33a/6a86ffd3b8424e3aab8392f4_alexey_photo-circle2.png" alt="Alexey Tretina" style="width:100%;max-width:300px;aspect-ratio:1;object-fit:cover;border-radius:999px;background:rgba(0,0,0,0.04)">
+    </div>
+  </div>
+
+  <sc-if value="{{ statsVisible }}" hint-placeholder-val="{{ true }}">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;margin-top:clamp(44px,7vw,80px);background:rgba(0,0,0,0.1)">
+      <div style="background:#FBFAF8;padding:22px 22px 22px 0">
+        <p style="margin:0 0 8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A887E">Since</p>
+        <p style="margin:0;font-size:clamp(28px,3.6vw,40px);line-height:1;letter-spacing:-0.03em;font-weight:500">2010</p>
+      </div>
+      <div style="background:#FBFAF8;padding:22px 22px 22px 24px">
+        <p style="margin:0 0 8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A887E">Clients</p>
+        <p style="margin:0;font-size:clamp(28px,3.6vw,40px);line-height:1;letter-spacing:-0.03em;font-weight:500">100+</p>
+      </div>
+      <div style="background:#FBFAF8;padding:22px 22px 22px 24px">
+        <p style="margin:0 0 8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A887E">Repeat clients</p>
+        <p style="margin:0;font-size:clamp(28px,3.6vw,40px);line-height:1;letter-spacing:-0.03em;font-weight:500">68%</p>
+      </div>
+      <div style="background:#FBFAF8;padding:22px 22px 22px 24px">
+        <p style="margin:0 0 8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8A887E">Revenue impact</p>
+        <p style="margin:0;font-size:clamp(28px,3.6vw,40px);line-height:1;letter-spacing:-0.03em;font-weight:500">$200M+</p>
+      </div>
+    </div>
+  </sc-if>
+</section>
+
+<section id="work" style="padding:clamp(48px,8vw,96px) clamp(20px,5vw,56px);border-top:1px solid rgba(0,0,0,0.08)">
+  <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,56px);margin-bottom:clamp(32px,5vw,56px)">
+    <p style="flex:1 1 180px;margin:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:oklch(0.52 0.13 250)">Case studies</p>
+    <h2 style="flex:3 1 420px;margin:0;font-size:clamp(26px,3.6vw,40px);line-height:1.12;letter-spacing:-0.025em;font-weight:500;max-width:22em;text-wrap:pretty">Selected work, from AI-powered operations tools to blockchain trading platforms.</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:clamp(20px,2.5vw,28px)">
+    <div style="display:flex;flex-direction:column;border:1px solid rgba(0,0,0,0.1);border-radius:14px;overflow:hidden;background:#fff">
+      <img src="uploads/spensa-preview.png" alt="Spensa restaurant management dashboard" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;background:#F2F0EC">
+      <div style="padding:clamp(20px,2.4vw,26px);display:flex;flex-direction:column;gap:10px">
+        <h3 style="margin:0;font-size:20px;line-height:1.2;letter-spacing:-0.015em;font-weight:600">Spensa</h3>
+        <p style="margin:0;font-size:15px;line-height:1.58;color:#4A493F;text-wrap:pretty">Spensa is an AI-powered restaurant management platform aimed at reducing running costs. Users see where the money goes and let AI surface what matters. Modern restaurants use Spensa to stay in control of everything, from ordering and daily operations to recipes and cost calculation.</p>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;border:1px solid rgba(0,0,0,0.1);border-radius:14px;overflow:hidden;background:#fff">
+      <img src="uploads/upwork-preview.png" alt="Upwork enterprise onboarding screens" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;background:#F2F0EC">
+      <div style="padding:clamp(20px,2.4vw,26px);display:flex;flex-direction:column;gap:10px">
+        <h3 style="margin:0;font-size:20px;line-height:1.2;letter-spacing:-0.015em;font-weight:600">Upwork</h3>
+        <p style="margin:0;font-size:15px;line-height:1.58;color:#4A493F;text-wrap:pretty">Upwork hired me to redesign their enterprise solutions features. Enterprise clients needed a new onboarding process and simplifying the process of bringing their own freelancers to the platform. As a result of work being done, the onboarding completion rate has improved by 24%.</p>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;border:1px solid rgba(0,0,0,0.1);border-radius:14px;overflow:hidden;background:#fff">
+      <img src="uploads/morpher-preview.png" alt="Morpher trading platform on tablet and phone" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;background:#F2F0EC">
+      <div style="padding:clamp(20px,2.4vw,26px);display:flex;flex-direction:column;gap:10px">
+        <h3 style="margin:0;font-size:20px;line-height:1.2;letter-spacing:-0.015em;font-weight:600">Morpher</h3>
+        <p style="margin:0;font-size:15px;line-height:1.58;color:#4A493F;text-wrap:pretty">Over the course of three years, I worked with Morpher, a blockchain-based trading platform, to lead the design initiatives and build mobile and desktop apps. Morpher empowers everyday users to trade a wide range of assets: from stocks and crypto to luxury watches and rare collectibles.</p>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;border:1px solid rgba(0,0,0,0.1);border-radius:14px;overflow:hidden;background:#fff">
+      <img src="uploads/mana-preview.png" alt="Mana calendar app on phone" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;background:#F2F0EC">
+      <div style="padding:clamp(20px,2.4vw,26px);display:flex;flex-direction:column;gap:10px">
+        <h3 style="margin:0;font-size:20px;line-height:1.2;letter-spacing:-0.015em;font-weight:600">Mana</h3>
+        <p style="margin:0;font-size:15px;line-height:1.58;color:#4A493F;text-wrap:pretty">Mana is a tool for managing schedules, events, and appointments. You can sync all your calendars inside the app and stay organized like never before. One of the main challenges was to make the app useful in a very competitive field of personal productivity and calendars.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="career" style="padding:clamp(48px,8vw,96px) clamp(20px,5vw,56px);border-top:1px solid rgba(0,0,0,0.08)">
+  <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,56px);margin-bottom:clamp(28px,4vw,48px)">
+    <p style="flex:1 1 180px;margin:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:oklch(0.52 0.13 250)">Career</p>
+    <p style="flex:3 1 420px;margin:0;font-size:clamp(17px,2vw,22px);line-height:1.5;color:#4A493F;max-width:32em;text-wrap:pretty">Over 15 years of experience in UX design with startups and big companies in fintech, healthcare, security, social media, and other industries.</p>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:clamp(22px,4vw,44px);padding:22px 0;border-top:1px solid rgba(0,0,0,0.08);border-bottom:1px solid rgba(0,0,0,0.08);margin-bottom:clamp(8px,2vw,20px)">
+    <img src="https://cdn.prod.website-files.com/608f98c4efca26cabe8ac33a/6991b552cf2eb90ac8e83828_logo_upwork.png" alt="Upwork" style="height:24px;width:auto;opacity:0.55;filter:grayscale(1)" style-hover="opacity:1;filter:none">
+    <img src="https://cdn.prod.website-files.com/608f98c4efca26cabe8ac33a/6991b551892a858958acd785_logo_morpher_text.png" alt="Morpher" style="height:24px;width:auto;opacity:0.55;filter:grayscale(1)" style-hover="opacity:1;filter:none">
+    <img src="https://cdn.prod.website-files.com/608f98c4efca26cabe8ac33a/6991b551fed59e335460ca70_logo_apploi.png" alt="Apploi" style="height:24px;width:auto;opacity:0.55;filter:grayscale(1)" style-hover="opacity:1;filter:none">
+    <img src="https://cdn.prod.website-files.com/608f98c4efca26cabe8ac33a/6991b55110964ab4a3eb64ba_logo_fitness-circle.png" alt="The Fitness Circle" style="height:24px;width:auto;opacity:0.55;filter:grayscale(1)" style-hover="opacity:1;filter:none">
+    <img src="https://cdn.prod.website-files.com/608f98c4efca26cabe8ac33a/6991b552951cee771a29c3dc_logo_accedo.png" alt="Accedo" style="height:24px;width:auto;opacity:0.55;filter:grayscale(1)" style-hover="opacity:1;filter:none">
+    <img src="https://cdn.prod.website-files.com/608f98c4efca26cabe8ac33a/6991b55271ac4b4a1b0e04f8_logo_kisi.png" alt="Kisi" style="height:24px;width:auto;opacity:0.55;filter:grayscale(1)" style-hover="opacity:1;filter:none">
+  </div>
+
+  <div>
+    <sc-for list="{{ career }}" as="j" hint-placeholder-count="6">
+      <div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:clamp(12px,3vw,44px);padding:clamp(22px,3vw,30px) 0;border-bottom:1px solid rgba(0,0,0,0.08)">
+        <div style="flex:1 1 170px;min-width:0;border-right:{{ vRule }};padding-right:{{ colGap }}">
+          <p style="margin:0 0 6px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A887E">{{ j.years }}</p>
+          <p style="margin:0;font-size:17px;font-weight:600;letter-spacing:-0.01em">
+            <a href="{{ j.href }}" target="_blank" rel="noopener" style-hover="color:oklch(0.52 0.13 250)">{{ j.company }}</a>
+          </p>
+        </div>
+        <div style="flex:3 1 380px;min-width:0">
+          <p style="margin:0 0 8px;font-size:16px;font-weight:500">{{ j.role }}</p>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:#4A493F;max-width:46em;text-wrap:pretty">{{ j.body }}</p>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="contact" style="padding:clamp(48px,8vw,96px) clamp(20px,5vw,56px) clamp(28px,4vw,40px)">
+  <h2 style="margin:0;font-size:clamp(26px,4vw,44px);line-height:1.1;letter-spacing:-0.03em;font-weight:500;max-width:20em;text-wrap:pretty">If you want to discuss an interesting project or you just want to say "Hi", don't hesitate to reach out.</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(24px,3vw,34px)">
+    <a href="mailto:hello@alexeytretina.com" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border-radius:999px;background:#1A1A17;color:#FBFAF8;font-size:15px;font-weight:500" style-hover="background:oklch(0.52 0.13 250);color:#fff">Send an email</a>
+  </div>
+  <p style="margin:clamp(40px,6vw,64px) 0 0;padding-top:20px;border-top:1px solid rgba(0,0,0,0.08);font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.06em;color:#8A887E">2026 © ALEXEY TRETINA</p>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showStats&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showPlaceholders&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+class Component extends DCLogic {
+  state = { wide: true, menuOpen: false };
+  componentDidMount() {
+    this.mq = window.matchMedia("(min-width: 760px)");
+    this.onMq = () => this.setState({ wide: this.mq.matches, menuOpen: this.mq.matches ? false : this.state.menuOpen });
+    this.onMq();
+    this.mq.addEventListener("change", this.onMq);
+  }
+  componentWillUnmount() { this.mq && this.mq.removeEventListener("change", this.onMq); }
+  renderVals() {
+    const rule = this.state.wide ? "1px solid rgba(0,0,0,0.08)" : "none";
+    const cdn = "https://cdn.prod.website-files.com/608f98c4efca26cabe8ac33a/";
+    return {
+      vRule: rule,
+      wide: this.state.wide,
+      narrow: !this.state.wide,
+      menuOpen: !this.state.wide && this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      colGap: this.state.wide ? "clamp(28px,4vw,56px)" : "0px",
+      statsVisible: (this.props.showStats ?? true) && this.state.wide,
+      showPlaceholders: this.props.showPlaceholders ?? true,
+      _unusedStats: [
+        { label: "Since", value: "2010" },
+        { label: "Clients", value: "100+" },
+        { label: "Repeat clients", value: "68%" },
+        { label: "Revenue impact", value: "$200M+" }
+      ],
+      _unusedCases: [
+        { num: "01", title: "Spensa", shot: "Spensa restaurant management app", href: "https://www.alexeytretina.com/case-study-spensa", body: "Spensa is an AI-powered restaurant management platform aimed at reducing running costs. Users see where the money goes and let AI surface what matters. Modern restaurants use Spensa to stay in control of everything, from ordering and daily operations to recipes and cost calculation." },
+        { num: "02", title: "Upwork", shot: "Upwork platform redesign screenshot", href: "https://www.alexeytretina.com/case-study-upwork", body: "Upwork hired me to redesign their enterprise solutions features. Enterprise clients needed a new onboarding process and simplifying the process of bringing their own freelancers to the platform. As a result of work being done, the onboarding completion rate has improved by 24%." },
+        { num: "03", title: "Morpher", shot: "Morpher trading app screenshot", href: "https://www.alexeytretina.com/case-study-morpher", body: "Over the course of three years, I worked with Morpher, a blockchain-based trading platform, to lead the design initiatives and build mobile and desktop apps. Morpher empowers everyday users to trade a wide range of assets: from stocks and crypto to luxury watches and rare collectibles." },
+        { num: "04", title: "Mana", shot: "Mana mobile app screenshot", href: "https://www.alexeytretina.com/case-study-mana", body: "Mana is a tool for managing schedules, events, and appointments. You can sync all your calendars inside the app and stay organized like never before. One of the main challenges was to make the app useful in a very competitive field of personal productivity and calendars." }
+      ],
+      _unusedLogos: [
+        { alt: "Upwork", src: cdn + "6991b552cf2eb90ac8e83828_logo_upwork.png" },
+        { alt: "Morpher", src: cdn + "6991b551892a858958acd785_logo_morpher_text.png" },
+        { alt: "Apploi", src: cdn + "6991b551fed59e335460ca70_logo_apploi.png" },
+        { alt: "The Fitness Circle", src: cdn + "6991b55110964ab4a3eb64ba_logo_fitness-circle.png" },
+        { alt: "Accedo", src: cdn + "6991b552951cee771a29c3dc_logo_accedo.png" },
+        { alt: "Kisi", src: cdn + "6991b55271ac4b4a1b0e04f8_logo_kisi.png" }
+      ],
+      career: [
+        { years: "2025 – 2026", company: "Apploi", href: "https://www.apploi.com/", role: "Senior UX Designer", body: "Supported the healthcare workforce management platform as a UX designer. Delivered multiple high-impact platform features for hiring and scheduling healthcare staff, improved workflow efficiency for recruiting teams." },
+        { years: "2022 – 2025", company: "Morpher", href: "https://www.morpher.com/new", role: "Senior UX Designer", body: "I have led end-to-end design initiatives, from user research to high-fidelity UI design, animations, and landing pages development. Collaborated closely with the CTO, engineers, and the marketing team." },
+        { years: "2021 – 2022", company: "Upwork", href: "https://www.upwork.com/", role: "Senior Product Designer", body: "At Upwork, I was working on improving the Upwork Enterprise onboarding experience together with “Bring your own freelancer” client feature. Improved the onboarding completion rate by 24%." },
+        { years: "2020 – 2021", company: "Combyne", href: "https://www.combyne.com/", role: "Product Designer", body: "Was digitizing the usage of fashion through Combyne. Introduced the new onboarding for mobile apps and a couple of other big features for creating everyday outfits." },
+        { years: "2018 – 2019", company: "Kisi", href: "https://www.getkisi.com/", role: "Product Designer", body: "I’ve been working on Kisi’s cloud-based access control apps on iOS, Android, and web. The redesigned versions of the mobile app got high ratings in the AppStore and Google Play Market (4.8 and 4.6 respectively). The redesigned web app was also well-received by the customers. That success allowed the company to grow twice while I was there." },
+        { years: "2015 – 2016", company: "Accedo", href: "https://www.accedo.tv/", role: "UX/UI Designer", body: "During my time at Accedo, I’ve been working on video apps across various platforms. I worked with multiple development teams to make sure the apps work and look consistent on all platforms (iOS, Android, Web, Roku, Apple TV). The OTT Flow app was nominated in 2016 in Sweden for its great UX." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
