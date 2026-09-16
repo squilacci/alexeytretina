@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<script src="../../image-slot.js"></script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FBFAF8;color:#1A1A17;font-family:'Instrument Sans',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#1A1A17;text-decoration:none}
+a:hover{color:oklch(0.52 0.13 250)}
+</style>
+</helmet>
+<div style="max-width:1180px;margin:0 auto;border-left:{{ vRule }};border-right:{{ vRule }}">
+
+<header style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px clamp(20px,5vw,56px);border-bottom:1px solid rgba(0,0,0,0.08)">
+  <a href="../../index.html" style="font-size:15px;font-weight:600;letter-spacing:-0.01em">Alexey Tretina</a>
+  <nav style="display:flex;align-items:center;gap:clamp(14px,3vw,28px);font-size:14px;color:#6B6A63">
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <a href="../../index.html#about" style="color:#6B6A63" style-hover="color:#1A1A17">About</a>
+      <a href="../../index.html#work" style="color:#6B6A63" style-hover="color:#1A1A17">Case studies</a>
+      <a href="../../index.html#career" style="color:#6B6A63" style-hover="color:#1A1A17">Career</a>
+    </sc-if>
+    <a href="#contact" style="display:inline-flex;align-items:center;height:34px;padding:0 14px;border-radius:999px;background:#1A1A17;color:#FBFAF8;font-weight:500;white-space:nowrap" style-hover="background:oklch(0.52 0.13 250);color:#fff">Get in touch</a>
+    <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+      <button type="button" onClick="{{ toggleMenu }}" aria-label="Menu" aria-expanded="{{ menuOpen }}" style="display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0 10px;margin-right:-10px;border:0;background:none;cursor:pointer">
+        <span style="display:block;height:1.5px;background:#1A1A17;border-radius:2px"></span>
+        <span style="display:block;height:1.5px;background:#1A1A17;border-radius:2px"></span>
+        <span style="display:block;height:1.5px;background:#1A1A17;border-radius:2px"></span>
+      </button>
+    </sc-if>
+  </nav>
+</header>
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <nav style="display:flex;flex-direction:column;padding:6px clamp(20px,5vw,56px) 14px;border-bottom:1px solid rgba(0,0,0,0.08);font-size:16px">
+    <a href="../../index.html#about" onClick="{{ closeMenu }}" style="padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.06)">About</a>
+    <a href="../../index.html#work" onClick="{{ closeMenu }}" style="padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.06)">Case studies</a>
+    <a href="../../index.html#career" onClick="{{ closeMenu }}" style="padding:12px 0">Career</a>
+  </nav>
+</sc-if>
+
+<section style="padding:clamp(44px,7vw,84px) clamp(20px,5vw,56px) clamp(28px,4vw,44px)">
+  <p style="margin:0 0 clamp(18px,3vw,26px);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:oklch(0.52 0.13 250)">Case study</p>
+  <h1 style="margin:0;font-size:clamp(38px,7vw,68px);line-height:1;letter-spacing:-0.035em;font-weight:500">Spensa<span style="color:oklch(0.52 0.13 250)">.</span></h1>
+  <p style="margin:clamp(18px,2.5vw,26px) 0 0;font-size:clamp(16px,1.6vw,19px);line-height:1.6;color:#4A493F;max-width:36em;text-wrap:pretty">Spensa is an AI-powered restaurant management platform. Modern restaurants use Spensa to stay in control of everything: food ordering, daily operations, recipes, and cost calculation.</p>
+</section>
+
+<section style="padding:0 clamp(20px,5vw,56px) clamp(40px,6vw,72px)">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(20px,2.5vw,28px)">
+
+    <div style="grid-column: 1/-1; position: relative; aspect-ratio: 16/9; background: #EDF3F1; border-radius: 8px; overflow: hidden">
+      <image-slot id="spensa-hero" shape="rect" src="../../uploads/spensa-preview.png" placeholder="Dashboard hero — tablet mockup"></image-slot>
+    </div>
+
+    <div style="padding-top:clamp(16px,2.5vw,26px)">
+      <h2 style="margin:0 0 18px;font-size:clamp(22px,2.6vw,28px);line-height:1.15;letter-spacing:-0.02em;font-weight:500">My role</h2>
+      <ul style="margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:9px;font-size:16px;line-height:1.5;color:#4A493F">
+        <li>Research, prototyping, testing</li>
+        <li>Branding</li>
+        <li>Mobile app design</li>
+        <li>Desktop app design</li>
+        <li>Design system development</li>
+        <li>Landing page assets</li>
+      </ul>
+    </div>
+
+    <div style="padding-top: clamp(16px,2.5vw,26px); border-left: {{ vRule }}; border-style: none">
+      <h2 style="margin:0 0 18px;font-size:clamp(22px,2.6vw,28px);line-height:1.15;letter-spacing:-0.02em;font-weight:500">Challenge</h2>
+      <p style="margin:0;font-size:16px;line-height:1.62;color:#4A493F;text-wrap:pretty">The industry loses roughly $162 billion a year to food waste. The goal was to create a modern restaurant management platform that has minimal look and feel, and has less than 3 clicks/taps to complete each of the major tasks. Managers spend 30-35% of their time on administrative tasks, roughly 18-21 hours a week on paperwork and data entry. This time must be reduced with Spensa.</p>
+    </div>
+
+    <div style="grid-column: 1/-1; margin-top: clamp(12px,2vw,24px); position: relative; aspect-ratio: 11/4; background: #F2F0EC; border-radius: 8px; overflow: hidden">
+      <image-slot id="spensa-flow" shape="rect" fit="contain" placeholder="User flow diagram"></image-slot>
+    </div>
+
+    <div style="position:relative;aspect-ratio:4/3;background:#F2F0EC;border-radius:8px;overflow:hidden">
+      <image-slot id="spensa-chef" shape="rect" placeholder="Chef using the app"></image-slot>
+    </div>
+    <div style="position:relative;aspect-ratio:4/3;background:#EFEFEC;border-radius:8px;overflow:hidden">
+      <image-slot id="spensa-brand" shape="rect" placeholder="Brand / app icon on phone"></image-slot>
+    </div>
+
+    <p style="margin:0;font-size:15.5px;line-height:1.62;color:#4A493F;text-wrap:pretty">Spensa branding was highly inspired by the minimal-looking platforms like Linear and Notion. It should translate the vision of simple restaurant management tool. With Spensa restaurant owners should be able to see where the money goes and let AI surface what matters. Spending trends, supplier comparisons, category breakdowns - everything is built from the invoices, and analyzed in seconds.</p>
+    <p style="margin: 0; font-size: 15.5px; line-height: 1.62; color: #4A493F; text-wrap: pretty; border-left: {{ vRule }}; border-style: none">The process included close collaboration with co-founders. We went through several iterations of testing and refining before launching the MVP with a couple of restaurants in Vienna, Austria. That beta-test went well, and the platform was offered to more restaurants in the area. Scaling Spensa is the next step. The idea is that the app becomes a go-to ordering platform for restaurants, cafes, and food service teams.</p>
+
+    <div style="grid-column:1/-1;margin-top:clamp(12px,2vw,24px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(20px,2.5vw,28px)">
+      <div>
+        <div style="position:relative;aspect-ratio:4/5;background:#DCE9F5;border-radius:8px;overflow:hidden">
+          <image-slot id="spensa-invoices" shape="rect" placeholder="Invoices screen — mobile"></image-slot>
+        </div>
+        <p style="margin:16px 0 0;font-size:15px;line-height:1.55;color:#4A493F;text-wrap:pretty">Food cost typically runs 28-35% of revenue; combined with labor and overhead, total costs hit 70-75% of revenue.</p>
+      </div>
+      <div>
+        <div style="position:relative;aspect-ratio:4/5;background:#F6E3DC;border-radius:8px;overflow:hidden">
+          <image-slot id="spensa-stats" shape="rect" placeholder="Stats screen — desktop"></image-slot>
+        </div>
+        <p style="margin:16px 0 0;font-size:15px;line-height:1.55;color:#4A493F;text-wrap:pretty">Wholesale food prices are now ~37% higher than before the pandemic, leaving almost no room for error.</p>
+      </div>
+    </div>
+
+    <div style="grid-column:1/-1;position:relative;aspect-ratio:2/1;background:#F7E7DE;border-radius:8px;overflow:hidden">
+      <image-slot id="spensa-phones" shape="rect" placeholder="Employees, new dish, new order — three phones"></image-slot>
+    </div>
+
+    <div style="grid-column:1/-1;position:relative;aspect-ratio:2/1;background:#E4EDF8;border-radius:8px;overflow:hidden">
+      <image-slot id="spensa-desktop" shape="rect" placeholder="Spendings and orders calendar — desktop UI"></image-slot>
+    </div>
+
+  </div>
+</section>
+
+<section style="padding:clamp(36px,5vw,64px) clamp(20px,5vw,56px) clamp(40px,6vw,72px);border-top:1px solid rgba(0,0,0,0.08)">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(20px,2.5vw,28px)">
+    <div>
+      <h2 style="margin:0 0 18px;font-size:clamp(22px,2.6vw,28px);line-height:1.15;letter-spacing:-0.02em;font-weight:500">Results</h2>
+      <p style="margin:0 0 14px;font-size:16px;line-height:1.62;color:#4A493F;text-wrap:pretty">Spensa launched to its first restaurants with no formal onboarding, which was the whole point. Owners and line staff were adding receipts and sending real orders the day they signed up, that proved out the central design bet: that the tool had to feel closer to sending a text than to running enterprise software.</p>
+      <p style="margin:0;font-size:16px;line-height:1.62;color:#4A493F;text-wrap:pretty">It works offline, so orders placed in the walk-in or cellar save on the phone and sync later. And since dishes are costed from actual invoice prices, the team sees a margin slip the moment a supplier's price goes up — not at month-end.</p>
+    </div>
+    <div>
+      <h2 style="margin:0 0 18px;font-size:clamp(22px,2.6vw,28px);line-height:1.15;letter-spacing:-0.02em;font-weight:500">Future Scope</h2>
+      <ul style="margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:9px;font-size:16px;line-height:1.5;color:#4A493F">
+        <li>Predictive ordering</li>
+        <li>Multi-location rollups</li>
+        <li>Supplier-side features</li>
+        <li>Smarter price intelligence</li>
+      </ul>
+    </div>
+    <div style="grid-column:1/-1;margin-top:clamp(12px,2vw,24px);position:relative;aspect-ratio:2/1;background:#F2F0EC;border-radius:8px;overflow:hidden">
+      <image-slot id="spensa-wireframes" shape="rect" placeholder="Full wireframe set"></image-slot>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding:clamp(48px,8vw,96px) clamp(20px,5vw,56px) clamp(28px,4vw,40px);border-top:1px solid rgba(0,0,0,0.08)">
+  <h2 style="margin:0;font-size:clamp(26px,4vw,44px);line-height:1.1;letter-spacing:-0.03em;font-weight:500;max-width:20em;text-wrap:pretty">If you want to discuss an interesting project or you just want to say "Hi", don't hesitate to reach out.</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(24px,3vw,34px)">
+    <a href="mailto:hello@alexeytretina.com" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border-radius:999px;background:#1A1A17;color:#FBFAF8;font-size:15px;font-weight:500" style-hover="background:oklch(0.52 0.13 250);color:#fff">Send an email</a>
+  </div>
+  <p style="margin:clamp(40px,6vw,64px) 0 0;padding-top:20px;border-top:1px solid rgba(0,0,0,0.08);font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.06em;color:#8A887E">2026 © ALEXEY TRETINA</p>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { wide: true, menuOpen: false };
+  componentDidMount() {
+    this.mq = window.matchMedia("(min-width: 760px)");
+    this.onMq = () => this.setState({ wide: this.mq.matches, menuOpen: this.mq.matches ? false : this.state.menuOpen });
+    this.onMq();
+    this.mq.addEventListener("change", this.onMq);
+  }
+  componentWillUnmount() { this.mq && this.mq.removeEventListener("change", this.onMq); }
+  renderVals() {
+    return {
+      vRule: this.state.wide ? "1px solid rgba(0,0,0,0.08)" : "none",
+      colGap: this.state.wide ? "clamp(24px,3vw,44px)" : "0px",
+      wide: this.state.wide,
+      narrow: !this.state.wide,
+      menuOpen: !this.state.wide && this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false })
+    };
+  }
+}
+</script>
+</body>
+</html>
